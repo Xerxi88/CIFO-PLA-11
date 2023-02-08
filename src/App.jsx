@@ -42,6 +42,7 @@ function App() {
 
       {/* TODO #5
       /// Afegeix aquí el component Footer. */}
+      <Footer/>
     </>
   )
 }
