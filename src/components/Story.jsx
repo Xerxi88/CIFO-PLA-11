@@ -9,9 +9,10 @@ const Story = ({ storyId, photo, author, timestamp, comments, onAddComment }) =>
       {/* TODO #13
       /// Fes un map sobre l'array comments per tal que per cada comentari
       /// es mostri un component Comment amb les props que necessiti. */}
-      
-        <CommentForm storyId={storyId} onAddComment={onAddComment} />
-     
+      {comments.map((comment)=>(<Comment author={comment.username} text={comment.comment}/>))}
+
+      <CommentForm storyId={storyId} onAddComment={onAddComment} />
+        
     </div>
   )
 }
