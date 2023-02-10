@@ -18,7 +18,7 @@ const CommentForm = ({ storyId, onAddComment }) => {
     <form onSubmit={onSubmit}>
       {/* TODO #9
       /// Un dels quatre atributs d'aquest input té un problema evident que cal arreglar. */}
-      <input type='text' placeholder='Join the conversation' value='text' onChange={(e) => setText(e.target.value)} />
+      <input type='text' placeholder='Join the conversation' value='Join the conversation' onChange={(e) => setText(e.target.value)} />
       <input type='submit' value='Send' className='btn btn-block' />
     </form>
   )
