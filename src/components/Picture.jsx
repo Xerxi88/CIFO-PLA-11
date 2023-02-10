@@ -8,14 +8,15 @@ const Picture = ({ photo, author, timestamp }) => {
   return (
     // TODO #11
     // Afegeix les classes de CSS picture i picture-big als elements div i img respectivament.
-    <div>
+    <div className="picture">
       <figure>
-        <img src={photo} alt={`Uploaded by ${author}`} />
+        <img src={photo} alt={`Uploaded by ${author}`} className="picture-big" />
         <figcaption>
           {/* TODO #12
           /// Afegeix el contingut de figcaption perquè mostri el següent text:
           /// Posted [n] days ago by [nom autor fotografia]
           /// Pots fer que posi today i yesterday en comptes de "0 days ago" i "1 day ago"? */}
+          <div>Posted {time} by {author}</div>
         </figcaption>
       </figure>
     </div>

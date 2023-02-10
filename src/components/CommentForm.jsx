@@ -3,6 +3,7 @@ import { useState } from 'react'
 const CommentForm = ({ storyId, onAddComment }) => {
   // TODO #7
   // Fes servir el hook adequat per gestionar un estat amb nom `text`.
+  const [text,setText] = useState();
 
   // TODO #8
   // Implementa aquesta funció per tal que:
