@@ -12,13 +12,24 @@ const CommentForm = ({ storyId, onAddComment }) => {
   // 3) si no ho és:
   // 3.1) faci servir la funció rebuda com a prop en aquest component per afegir el comentari,
   // 3.2) deixi de nou buit el quadre de text.
-  const onSubmit = (e) => {}
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if(!text){
+      alert('Por favor inserte texto')
+      return
+    }else{
+
+    onAddComment({ storyId })
+    setText('')
+  }
+}
 
   return (
     <form onSubmit={onSubmit}>
       {/* TODO #9
       /// Un dels quatre atributs d'aquest input té un problema evident que cal arreglar. */}
-      <input type='text' placeholder='Join the conversation' value='Join the conversation' onChange={(e) => setText(e.target.value)} />
+      <input type='text' placeholder='Join the conversation'  onChange={(e) => setText(e.target.value)} />
       <input type='submit' value='Send' className='btn btn-block' />
     </form>
   )
