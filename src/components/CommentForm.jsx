@@ -3,8 +3,8 @@ import { useState } from 'react'
 const CommentForm = ({ storyId, onAddComment }) => {
   // TODO #7
   // Fes servir el hook adequat per gestionar un estat amb nom `text`.
-  const [text,setText] = useState();
-
+  const [text,setText] = useState('');
+  
   // TODO #8
   // Implementa aquesta funció per tal que:
   // 1) eviti que es refresqui la pàgina (és el que voldrà fer el formulari per defecte),
@@ -20,7 +20,7 @@ const CommentForm = ({ storyId, onAddComment }) => {
       return
     }else{
 
-    onAddComment({ storyId })
+    onAddComment( storyId , text )
     setText('')
   }
 }
@@ -29,7 +29,7 @@ const CommentForm = ({ storyId, onAddComment }) => {
     <form onSubmit={onSubmit}>
       {/* TODO #9
       /// Un dels quatre atributs d'aquest input té un problema evident que cal arreglar. */}
-      <input type='text' placeholder='Join the conversation'  onChange={(e) => setText(e.target.value)} />
+      <input type='text' placeholder='Join the conversation' value={text} onChange={(e) => setText(e.target.value)} />
       <input type='submit' value='Send' className='btn btn-block' />
     </form>
   )

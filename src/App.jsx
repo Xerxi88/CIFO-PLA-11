@@ -28,7 +28,23 @@ function App() {
     // Fixa't que rep un id d'story i un text amb el comentari a afegir.
     // Cal afegir aquest comentari (incorporant userLoggedIn com a usuari i la data actual) a la story en qüestió.
     // Després de fer-ho, React ha de repintar la story de manera automàtica perquè ja mostri el nou comentari.
-  }
+
+      setStories(
+        stories.map((story) => {
+        if (story.id !== storyId) {
+          return story}
+          
+          const newComment = {
+            id:story.id,
+            username: userLoggedIn,
+            comment: comment,
+            timestamp: new Date().toISOString(),
+          }
+
+          return {...story, comments:[...story.comments, newComment]}
+
+        }))
+      }
 
   return (
     <>
@@ -39,7 +55,7 @@ function App() {
 
       {/* TODO #4
       /// Afegeix aquí el component ListStories passant-li com a props l'array amb les stories i la funció per afegir un comentari. */}
-      {<ListStories stories={stories} onAddComment={"Nom de la funció"}/> }
+      {<ListStories stories={stories} onAddComment={addComment}/>}
       {/* TODO #5
       /// Afegeix aquí el component Footer. */}
       <Footer/>
